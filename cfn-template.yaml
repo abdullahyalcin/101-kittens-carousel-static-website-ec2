@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: |
-  This template creates an EC2 with SSH 
+  This is my Cfn template for EC2 with Security Group
 
 Resources:
   AbdullahInstance:
@@ -43,3 +43,11 @@ Resources:
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
+
+Outputs:
+  WebSiteUrl:
+    Description: this output gives the URL of EC2
+    Value: !Sub
+      - http://${PublicAddress}
+      - PublicAddress: !GetAtt AbdullahInstance.PublicDnsName
+     
