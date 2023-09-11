@@ -45,9 +45,9 @@ Resources:
           CidrIp: 0.0.0.0/0
 
 Outputs:
-  WebSiteUrl:
-    Description: this output gives the URL of EC2
-    Value: !Sub
+  WebSiteURL:
+    Description: This output gives the URL of EC2
+    Value: !Sub 
       - http://${PublicAddress}
       - PublicAddress: !GetAtt AbdullahInstance.PublicDnsName
      
